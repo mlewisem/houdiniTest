@@ -1,0 +1,11 @@
+query growthRates {
+  growthRates {
+    count
+    next
+    previous
+    results {
+      url
+      name
+    }
+  }
+}

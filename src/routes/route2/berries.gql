@@ -1,0 +1,11 @@
+query berries {
+	berries {
+		count
+		next
+		previous
+		results {
+			url
+			name
+		}
+	}
+}
