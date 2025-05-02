@@ -11,18 +11,20 @@ export const load: PageLoad = async (event) => {
 		event
 	});
 
-	// variable needed for second query.
+	// variable needed for second query. Empty on client side navigation
 
-	const nextQueryVariable = growth.growthRates.count;
+	const nextQueryVariable = growth;
+	console.log('🚀 ~ constload:PageLoad= ~ nextQueryVariable:', nextQueryVariable);
 
 	// Variable passed into second query in orginal code base. On client side navigation this does not trigger because first query data is null
 
-	const { data: evolutionTriggers } = await berriesQuery.fetch({
+	const { data: berries } = await berriesQuery.fetch({
 		event
 	});
-	console.log('🚀 ~ constload:PageLoad= ~ evolutionTriggers:', evolutionTriggers);
+
+	console.log('🚀 ~ constload:PageLoad= ~ berries:', berries);
 
 	return {
-		growth
+		berries
 	};
 };
